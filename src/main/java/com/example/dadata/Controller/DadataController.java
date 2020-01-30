@@ -1,6 +1,8 @@
 package com.example.dadata.Controller;
 
-import com.example.dadata.domain.Dadata;
+import com.example.dadata.domain.Suggestion;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -15,7 +17,7 @@ public class DadataController {
 
 
     @PostMapping("/")
-    public Dadata getMovieByTitle() {
+    public Suggestion getMovieByTitle() throws JsonProcessingException {
 
         String accessToken = "3690dff6fc202c750c97d780fe333d2c063dadcd";
         final String url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address";
@@ -23,11 +25,15 @@ public class DadataController {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Token " + accessToken);
+        headers.set(HttpHeaders.AUTHORIZATION, "Token " + accessToken);
 
         String requestJson = "{\"query\":\"казань\"}";
         HttpEntity<String> entity = new HttpEntity<>(requestJson, headers);
-        return restTemplate.postForObject(url, entity, Dadata.class);
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return restTemplate.postForObject(url, entity, Suggestion.class);
+
+//        DadataRequest dadataRequest = objectMapper.readValue(str, DadataRequest.class);
     }
 
 }
