@@ -12,8 +12,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class DadataApi {
-    public final String TOKEN_PREFIX = "Token ";
-
 
     @Autowired
     private AppProperties appProperties;
@@ -24,7 +22,9 @@ public class DadataApi {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set(HttpHeaders.AUTHORIZATION, appProperties.getTokenPrefix() + " " + appProperties.getToken());
         String requestJson = "{\"query\":\"" + location + "\"}";
-        HttpEntity<String> entity = new HttpEntity<>(requestJson, headers);
+        HttpEntity<String> entity =
+                new HttpEntity<>(requestJson, headers);
+
         return restTemplate.postForObject(appProperties.getUrl(), entity, Dadata.class);
     }
 }
