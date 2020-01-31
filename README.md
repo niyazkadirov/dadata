@@ -30,7 +30,8 @@
   
   > region - Region
   
-  > regionFiasId - area FIAS code in the region
+  > regionFiasId - area FIAS code in the region  
   
-  > all - get all parameters 
+  
+  if a non-existent parameter is entered, then all parameters for this region will be returned in the form of JSON
   
