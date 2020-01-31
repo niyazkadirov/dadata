@@ -1,36 +1,36 @@
 # Dadata Client
 
-**1. Настройка**
+**1. Setting**
 
- Добавить в application.properties
+ Add to application.properties
  
  > app.token=your_api_token
  
  > app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
 
-**2. Запросы**
+**2. Request**
 
-  Вы можете отправить GET запрос на адрес
+  You can send a GET request to the address
   
   > /api/{location}/{location_param}
   
-  где, **location** - локация, для которого вы хотите получить параметры, **location_param** - параметры, которые вы хотите получить  
+  where, **location** - локация, location for which you want to get parameters, **location_param** - parameters you want to get  
   
-  **3. Пример**
+  **3. Example**
   
   > /api/казань/regionkladrid
   
-  ответом для данного запроса будет
+  the answer for this request will be
   
   > 1600000000000
   
-  **4. Параметры**
+  **4. Parameters**
   
-  > regionKladrId - Код КЛАДР региона
+  > regionKladrId - region KLADR code
   
-  > region - Регион
+  > region - Region
   
-  > regionFiasId - 	Код ФИАС района в регионе 
+  > regionFiasId - area FIAS code in the region
   
-  > all - Получить все параметры 
+  > all - get all parameters 
   
