@@ -13,26 +13,32 @@ app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
 
   You can send a GET request to the address
   
-  > /api/{location}/{location_param}
+  ```
+  /api/{location}/{location_param}
+  
+```
   
   where, **location** - location for which you want to get parameters, **location_param** - parameters you want to get  
   
   **3. Example**
   
-  > /api/казань/regionkladrid
-  
+   
+  ```
+   /api/казань/regionkladrid
+  ```
   the answer for this request will be
   
   > 1600000000000
   
   **4. Parameters**
   
-  > regionKladrId - region KLADR code
+  ```
+  regionKladrId - region KLADR code
   
-  > region - Region
+  region - Region
   
-  > regionFiasId - area FIAS code in the region  
-  
+  regionFiasId - area FIAS code in the region  
+  ```
   
   if a non-existent parameter is entered, then all parameters for this region will be returned in the form of JSON
   
