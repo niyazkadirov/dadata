@@ -12,7 +12,7 @@
 
   Вы можете отправить GET запрос на адрес
   
-  > /api/location/location_param
+  > /api/{location}/{location_param}
   
   где, **location** - локация, для которого вы хотите получить параметры, **location_param** - параметры, которые вы хотите получить  
   
@@ -30,4 +30,5 @@
   
   > region - Регион
   
-  > regionFiasId - 	Код ФИАС района в регионе
+  > regionFiasId - 	Код ФИАС района в регионе 
+  
