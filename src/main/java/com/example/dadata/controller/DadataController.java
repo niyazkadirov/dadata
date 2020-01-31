@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/api")
 public class DadataController {
@@ -17,7 +15,7 @@ public class DadataController {
     DadataService dadataService;
 
     @GetMapping("/{location}")
-    public Map<String, String> getLocation(@PathVariable("location") String location) {
+    public String getLocation(@PathVariable("location") String location) {
         return dadataService.getInfoByLocation(location);
     }
 }

@@ -13,14 +13,9 @@ public class DadataService {
     @Autowired
     private DadataApi dadataApi;
 
-    public Map<String, String> getInfoByLocation(String location) {
-        Map<String, String> map = new HashMap<>();
-
-        dadataApi.DadataClient(location)
-                .getSuggestions()
-                .forEach(suggestions -> map.put(suggestions.getValue() + " |Код КЛАДР региона ",
-                        suggestions.getData().getRegionKladrId()));
-        return map;
+    public String getInfoByLocation(String location) {
+        
+        return dadataApi.DadataClient(location).getSuggestions().iterator().next().getData().getRegionKladrId();
     }
 
 }
