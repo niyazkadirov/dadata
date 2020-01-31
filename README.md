@@ -14,7 +14,7 @@
   
   > /api/{location}/{location_param}
   
-  where, **location** - локация, location for which you want to get parameters, **location_param** - parameters you want to get  
+  where, **location** - location for which you want to get parameters, **location_param** - parameters you want to get  
   
   **3. Example**
   
