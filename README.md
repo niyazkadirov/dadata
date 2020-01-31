@@ -15,8 +15,7 @@ app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
   
   ```
   /api/{location}/{location_param}
-  
-```
+  ```
   
   where, **location** - location for which you want to get parameters, **location_param** - parameters you want to get  
   
