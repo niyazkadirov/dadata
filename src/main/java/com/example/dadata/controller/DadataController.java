@@ -21,7 +21,7 @@ public class DadataController {
 
         api.DadataClient(location)
                 .getSuggestions()
-                .forEach(suggestions -> map.put(suggestions.getValue() + " Код КЛАДР региона ",
+                .forEach(suggestions -> map.put(suggestions.getValue() + " |Код КЛАДР региона ",
                         suggestions.getData().getRegionKladrId()));
         return map;
     }
