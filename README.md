@@ -18,6 +18,7 @@ app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
   ```
   
   where, **location** - location for which you want to get parameters, **location_param** - parameters you want to get  
+ 
   
   **3. Example**
   
@@ -29,6 +30,9 @@ app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
   
   > 1600000000000
   
+  ![image](https://vk.com/albums26595832?z=photo26595832_457241039%2Fphotos26595832)
+  
+  
   **4. Parameters**
   
   ```
@@ -38,6 +42,5 @@ app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
   
   regionFiasId - area FIAS code in the region  
   ```
-  
-  if a non-existent parameter is entered, then all parameters for this region will be returned in the form of JSON
+  if the second parameter is not entered, then all parameters in JSON format for this location will be returned
   
