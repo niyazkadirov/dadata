@@ -30,8 +30,6 @@ app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
   
   > 1600000000000
   
-  ![image](https://vk.com/albums26595832?z=photo26595832_457241039%2Fphotos26595832)
-  
   
   **4. Parameters**
   
