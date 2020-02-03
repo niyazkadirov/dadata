@@ -7,6 +7,7 @@
 ```
 app.token=your_api_token
 app.url=https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address
+app.token-prefix=Token
 ```
 
 **2. Request**
