@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DadataService {
+public class DadataService implements DadataServiceImpl{
     private static final String REGION_KLADR_ID = "regionkladrid";
     private static final String REGION_FIAS_ID = "regionfiasid";
     private static final String REGION = "region";
@@ -20,6 +20,8 @@ public class DadataService {
      * @return возвращает экземляр класса Dadata, где описан POJO
      * с JSON структурой, приходящей от сервера API
      */
+
+    @Override
     @SuppressWarnings("unchecked")
     public <T> T getInfoByParam(String location, String param) {
         Gson gson = new Gson();
@@ -50,7 +52,7 @@ public class DadataService {
         }
     }
 
-
+    @Override
     @SuppressWarnings("unchecked")
     public <T> T getAllParam(String location) {
         return (T) dadataApi.DadataClient(location)
