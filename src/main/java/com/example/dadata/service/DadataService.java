@@ -2,6 +2,7 @@ package com.example.dadata.service;
 
 import com.example.dadata.API.DadataApi;
 import com.example.dadata.domain.Dadata;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,14 @@ public class DadataService {
     @Autowired
     private DadataApi dadataApi;
 
+    /**
+     * @return возвращает экземляр класса Dadata, где описан POJO
+     * с JSON структурой, приходящей от сервера API
+     */
     @SuppressWarnings("unchecked")
     public <T> T getInfoByParam(String location, String param) {
+        Gson gson = new Gson();
+
 
         Dadata.Data data = dadataApi
                 .DadataClient(location)
@@ -30,13 +37,13 @@ public class DadataService {
         switch (param.toLowerCase()) {
 
             case (REGION_KLADR_ID):
-                return (T) data.getRegionKladrId();
+                return (T) gson.toJson(data.getRegionKladrId());
 
             case (REGION):
-                return (T) data.getRegion();
+                return (T) gson.toJson(data.getRegion());
 
             case (REGION_FIAS_ID):
-                return (T) data.getRegionFiasId();
+                return (T) gson.toJson(data.getRegionFiasId());
             //.....
             default:
                 return (T) data;
@@ -52,5 +59,4 @@ public class DadataService {
                 .next()
                 .getData();
     }
-
 }

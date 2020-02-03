@@ -11,7 +11,6 @@ import java.util.Set;
 public class Dadata {
     private Set<Suggestions> suggestions;
 
-
     @lombok.Data
     public static class Data {
 
@@ -166,9 +165,8 @@ public class Dadata {
 
         @JsonAlias("unrestricted_value")
         private String unrestrictedValue;
-        private Data data;
 
+        private Data data;
     }
 
 }
-
