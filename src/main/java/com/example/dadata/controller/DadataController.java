@@ -14,10 +14,16 @@ public class DadataController {
     @Autowired
     DadataService dadataService;
 
-    @GetMapping("/{location}/{param}")
-    public <T> T getLocation(@PathVariable("location") String location,
-                             @PathVariable("param") String param) {
-
-        return dadataService.getInfoByLocation(location, param);
+    @GetMapping("/{location}")
+    public <T> T getAllParamForLocation(@PathVariable("location") String location) {
+        return dadataService.getAllParam(location);
     }
+
+    @GetMapping("/{location}/{param}")
+    public <T> T getParamForLocation(@PathVariable("location") String location,
+                                     @PathVariable("param") String param) {
+        return dadataService.getInfoByParam(location, param);
+    }
+
+
 }

@@ -15,9 +15,8 @@ public class DadataService {
     @Autowired
     private DadataApi dadataApi;
 
-
     @SuppressWarnings("unchecked")
-    public <T> T getInfoByLocation(String location, String param) {
+    public <T> T getInfoByParam(String location, String param) {
 
         Dadata.Data data = dadataApi
                 .DadataClient(location)
@@ -38,12 +37,20 @@ public class DadataService {
 
             case (REGION_FIAS_ID):
                 return (T) data.getRegionFiasId();
-
             //.....
-
             default:
-                return (T) dadataApi.DadataClient(location).getSuggestions().iterator().next().getData();
+                return (T) data;
         }
+    }
+
+
+    @SuppressWarnings("unchecked")
+    public <T> T getAllParam(String location) {
+        return (T) dadataApi.DadataClient(location)
+                .getSuggestions()
+                .iterator()
+                .next()
+                .getData();
     }
 
 }
