@@ -1,6 +1,7 @@
 package com.example.dadata.service;
 
 import com.example.dadata.API.DadataApi;
+import com.example.dadata.config.ApplicationConfiguration;
 import com.example.dadata.domain.Dadata;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class DadataService implements DadataServiceImpl{
     @Autowired
     private DadataApi dadataApi;
 
+    @Autowired
+    private Gson gson;
+
     /**
      * @return возвращает экземляр класса Dadata, где описан POJO
      * с JSON структурой, приходящей от сервера API
@@ -24,7 +28,7 @@ public class DadataService implements DadataServiceImpl{
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getInfoByParam(String location, String param) {
-        Gson gson = new Gson();
+
 
 
         Dadata.Data data = dadataApi
